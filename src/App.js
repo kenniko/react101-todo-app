@@ -1,15 +1,12 @@
 import React from "react";
+import TodoList from "./components/todoList";
 
-const todos = ["Finish homework", "Wash dishes", "Clean room", "Make waffles"];
-
-const Todo = (props) => <li>{props.todo}</li>;
-
-const TodoList = () => (
-  <ul>
-    {todos.map((todo) => (
-      <Todo todo={todo} key={todo} />
-    ))}
-  </ul>
-);
-
-export default TodoList;
+function App() {
+  return (
+    <div className="App">
+      <h1>Todos</h1>
+      <TodoList />
+    </div>
+  );
+}
+export default App;
