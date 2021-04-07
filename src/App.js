@@ -16,11 +16,17 @@ class App extends React.Component {
     }));
   };
 
+  deleteTodo = (value) => {
+    this.setState((prevState) => ({
+      todos: prevState.todos.filter((todo) => todo !== value),
+    }));
+  };
+
   render() {
     return (
       <div className="App">
         <h1>Todos</h1>
-        <TodoList todos={this.state.todos} />
+        <TodoList todos={this.state.todos} deleteTodo={this.deleteTodo} />
         <TodoForm addTodo={this.addTodo} />
       </div>
     );
