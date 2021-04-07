@@ -1,11 +1,13 @@
-import "./App.css";
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Todo list</h1>
-    </div>
-  );
-}
+const todos = ["Finish homework", "Wash dishes", "Clean room", "Make waffles"];
 
-export default App;
+const TodoList = () => (
+  <ul>
+    {todos.map((task) => (
+      <li key={task}>{task}</li>
+    ))}
+  </ul>
+);
+
+export default TodoList;
